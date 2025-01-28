@@ -2,4 +2,10 @@
 2. Install requirements
 3. Download model from : https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/tree/main , model : TheBloke/Llama-2-7B-Chat-GGML
 4. Embedding model to be used : sentence-transformers/all-MiniLM-L6-v2
+5. Create Account on Pinecone and create an Index of custom name (index_name)
+6. Then create an API key for you Pinecone account 
+7. Create .env file and store PINECONE_API_KEY & PINECONE_API_ENV in .env file.
+ 
+
+
 
