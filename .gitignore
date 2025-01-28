@@ -3,3 +3,4 @@ model/
 models/
 .env
 modelEmbedd
+src/__pycache__
