@@ -1,7 +1,15 @@
 from langchain_community.document_loaders import PyPDFLoader,DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+import google.generativeai as genai
 import os 
+from dotenv import load_dotenv
+load_dotenv()
+GEMINI_API_KEY=os.getenv("GOOGLE_API_KEY")
+PINECONE_API_KEY = os.getenv('PINECONE_API_KEY')
+
+
 
 #Extract data from the PDF
 def load_pdf(data):
@@ -34,3 +42,13 @@ def download_embeddings():
         cache_folder=cache_dir
     )
     return embeddings
+
+
+genai.configure(api_key=GEMINI_API_KEY)
+
+def get_gemini_embedding(text):
+    result = genai.embed_content(
+        model="models/text-embedding-004",
+        content=text
+    )
+    return result["embedding"]
