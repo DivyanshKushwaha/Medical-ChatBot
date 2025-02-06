@@ -1,4 +1,4 @@
-# Medical ChatBot using Gemini 1.5 Flash, LangChain, Pinecone, and Flask
+# Medical ChatBot
 
 This project implements an AI-powered Medical Chatbot that leverages the Gemini 1.5 Flash model for generating responses based on medical PDF content.  It utilizes Retrieval-Augmented Generation (RAG) to provide accurate and contextually relevant information.  Pinecone Vector DB is used for efficient semantic search and retrieval, and the chatbot is deployed using Flask.  LangChain facilitates seamless LLM orchestration and real-time query handling.
 
