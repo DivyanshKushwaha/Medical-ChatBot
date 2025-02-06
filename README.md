@@ -26,6 +26,7 @@ This Medical Chatbot allows users to ask questions related to the content within
 ```bash
 git clone [https://github.com/](https://github.com/)[your_github_username]/medical-chatbot.git  # Replace with your repo URL
 cd medical-chatbot
+```
 
 2. **Setting up the Environment**
 
@@ -39,3 +40,13 @@ cd medical-chatbot
    ```bash
    pip install -r requirements.txt
    ```
+
+### Running the App Locally
+
+1. To run the app on your local machine:
+
+```bash
+python app.py
+```
+
+2. Access the app on localhost:5000
