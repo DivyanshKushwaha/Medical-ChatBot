@@ -1,5 +1,6 @@
-ctransformers==0.2.5
-sentence-transformers==3.4.0
+Flask
+langchain
 pinecone-client
-langchain==0.3.16
-flask
+python-dotenv
+pypdf2  
+google-generativeai 
