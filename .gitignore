@@ -4,3 +4,4 @@ models/
 .env
 modelEmbedd
 src/__pycache__
+projectflow.txt

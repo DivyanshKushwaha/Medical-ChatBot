@@ -7,13 +7,12 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from src.prompt import prompt_template
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-from langchain.vectorstores import Pinecone
-import pinecone
+# from langchain.vectorstores import Pinecone
+import pinecone 
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain.document_loaders import DirectoryLoader,PyPDFDirectoryLoader,PyPDFLoader
 from langchain.document_loaders import TextLoader
-from langchain.vectorstores import Pinecone
 import warnings
 warnings.filterwarnings("ignore")
 from dotenv import load_dotenv
@@ -28,7 +27,8 @@ PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
 
 
 # Initialize Pinecone using the new method
-pc = pinecone.Pinecone(api_key=PINECONE_API_KEY)
+from pinecone import Pinecone, ServerlessSpec
+pc = Pinecone(api_key=PINECONE_API_KEY)
 
 index_name = 'llama-chatbot'
 index = pc.Index(index_name)
