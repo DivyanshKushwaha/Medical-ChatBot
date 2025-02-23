@@ -16,7 +16,7 @@ This Medical Chatbot allows users to ask questions related to the content within
 
 * **Accurate Responses:** Leverages RAG and semantic search to provide contextually relevant answers derived from the medical PDF.
 * **Efficient Retrieval:** Pinecone Vector DB enables fast and accurate retrieval of relevant information.
-* **Real-time Interaction:** Flask powers a dynamic web interface for real-time communication with the chatbot.
+* **Real-time Interaction:** Flask powers a dynamic web interface for real-time communication with the chactbot.
 * **User-Friendly Interface:**  A simple and intuitive chat interface for easy interaction.
 
 ## Installation
