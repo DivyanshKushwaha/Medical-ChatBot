@@ -2,7 +2,6 @@ from langchain_community.document_loaders import PyPDFLoader,DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-import google.generativeai as genai
 import os 
 from dotenv import load_dotenv
 load_dotenv()
@@ -32,23 +31,21 @@ def text_split(data_extracted):
 
 
 #download embedding model
-def download_embeddings():
-    # Define the path where the embeddings should be saved
-    cache_dir = os.path.join(os.getcwd(), "modelEmbedd")
+# def download_embeddings():
+#     # Define the path where the embeddings should be saved
+#     cache_dir = os.path.join(os.getcwd(), "modelEmbedd")
     
-    # Initialize embeddings with the specified cache directory
-    embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2",
-        cache_folder=cache_dir
-    )
-    return embeddings
+#     # Initialize embeddings with the specified cache directory
+#     embeddings = HuggingFaceEmbeddings(
+#         model_name="sentence-transformers/all-MiniLM-L6-v2",
+#         cache_folder=cache_dir
+#     )
+#     return embeddings
 
 
-genai.configure(api_key=GEMINI_API_KEY)
+embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004",google_api_key=GEMINI_API_KEY)
 
 def get_gemini_embedding(text):
-    result = genai.embed_content(
-        model="models/text-embedding-004",
-        content=text
-    )
-    return result["embedding"]
+    result = embeddings.embed_query(text)
+    return result
+
